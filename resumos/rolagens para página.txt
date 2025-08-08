@@ -1,0 +1,103 @@
+1
+
+Basicamente, a barra de rolagem de uma página pode ser dividida em quatro áreas: 
+
+Corpo - O elemento " corpo " é aquele que contém todos os outros componentes que formam a barra de rolagem.
+
+Trilho -  A parte do " trilho " é representada por aquele espaço em branco por onde o indicador cinza arrastável desliza.
+
+Scrollbar - A parte do " scrollbar " é representada por aquela alça (retângulo) cinza arrastável, que tem como função indicar a posição da página deslizando pelo trilho.
+
+Botões - Toda barra de rolagem tem dois botões, que ficam nas extremidades do trilho. 
+
+Tendo isso em mente, para personalizarmos a nossa barra de rolagem, é necessário abrir um seletor para cada um desses elementos (corpo, trilho, scrollbar e botões). No CSS, esses elementos são representados por pseudo-elementos (isso ocorre porque barras de rolagem são conteúdos periféricos) - Segue uma lista com esses elementos e suas representações:
+
+::-webkit-scrollbar - CORPO
+
+Esse elemento representa CORPO (objeto que contém todos os outros componentes da barra de rolagem: trilho, scrollbar e botões). Abra um seletor para esse elemento se deseja personalizar o corpo da barra de rolagem.
+
+Geralmente abrimos um seletor para esse elemento somente para declarar a LARGURA E ALTURA da barra de rolagem (altura no caso para barras horizontais) - Sempre declare a largura e altura. Não definimos as cores de fundo aqui porque os outros elementos ficam na frente desse, e portanto as configurações de estilo deles podem acabar cobrindo e estilização feita nesse seletor.
+
+Também é possível ocultar a barra de rolagem, fazendo com que ela "suma" por completo (e ao mesmo tempo mantenha a funcionalidade de rolagem da página normalmente). Para fazer isso basta usar a declaração " display: none " no seletor do corpo da barra de rolagem (::-webkit-scrollbar {...} ). 
+
+::-webkit-scrollbar-track - TRILHO
+
+Esse elemento representa o TRILHO. Abra um seletor para esse elemento se deseja personalizar o trilho da sua barra de rolagem.
+
+Você pode personalizar o trilho de várias maneiras: Configurar a cor de fundo, definir uma borda, arredondar as pontas da caixa e inclusive adicionar uma imagem como background por exemplo (não recomendado).
+
+Obs.: A largura do trilho segue a largura do CORPO (elemento que contém todos os componentes da barra de rolagem). Isso significado que a largura definida para o corpo que será aplicada ao trilho.
+
+::-webkit-scrollbar-thumb - SCROLLBAR
+
+Esse elemento representa o SCROLLBAR (indicador de posicionamento). Abra um seletor para esse elemento se deseja personalizar o scrollbar da sua barra de rolagem.
+
+Você pode personalizar o scrollbar de várias maneiras: Configurar a cor de fundo, definir uma borda, arredondar as pontas da caixa e inclusive também adicionar uma imagem como background por exemplo (não recomendado).
+
+Obs.: A largura do scrollbar segue a largura do CORPO (elemento que contém todos os componentes da barra de rolagem). Isso significado que a largura definida para o corpo que será aplicada ao scrollbar.
+
+::-webkit-scrollbar-button - BOTÕES
+
+Esse elemento representa os BOTÕES. Abra um seletor para esse elemento se deseja personalizar os botões da sua barra de rolagem.
+
+Você pode personalizar os botões de várias maneiras: Formatar a altura, mudar a cor de fundo, definir uma borda, arredondar as pontas da caixa e por aí vai...
+
+Atenção: Se você quer personalizar a barra de rolagem do seu site, você deve adicionar esses seletores de estilização de barra como pseudo-elemento do "body", do "html" ou do seu seletor global. 
+
+Vale lembrar que também é possível adicionar esses seletores de estilização de barra em um elemento específico que
+ também tenha barra de rolagem, numa caixa do overflow por exemplo 
+(se já foi definido no seletor global não precisa, já que assim fica válido para todos os elementos da página...)
+
+Nota: Você também pode estilizar esses componentes que formam a barra usando a pseudo-classe "hover". 
+Por exemplo, abrir um seletor para o scrollbar (indicador de posicionamento) 
+e configurar um background-color diferente que só vai ser ativado quando o usuário passar o mouse por cima do 
+indicador. Exemplo: 
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(92, 92, 92);
+}
+
+BARRA DE ROLAGEM VERTICAL E HORIZONTAL:
+
+Toda caixa pode ter barras de rolagem tanto verticais quanto horizontais, ocorre que ao personalizarmos os 
+componentes da nossa barra, podemos definir se queremos aplicar essas configurações especificamente para uma 
+barra horizontal ou vertical. 
+
+Para especificar um desses dois tipos de barra, normalmente usamos uma das duas pseudo-classes listadas abaixo 
+nos seletores dos nossos componentes:
+
+:vertical
+
+:horizontal
+
+Para especificar se a estilização do seu componente é para uma barra vertical ou horizontal, 
+é necessário inserir no final do seletor do componente uma dessas duas pseudo-classes apresentadas. Exemplo:
+
+Seletor para estilizar especificamente o scrollbar HORIZONTAL:
+
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: rgb(0, 255, 242);
+}
+
+Seletor para estilizar especificamente o scrollbar VERTICAL:
+
+::-webkit-scrollbar-thumb:vertical {
+  background-color: rgb(0, 255, 242);
+}
+
+Caso você queira criar seletores que abrangem ambos os tipos de barras, tanto verticais quanto horizontais, 
+basta NÃO USAR nenhuma dessas pseudo-classes apresentadas (:vertical / :horizontal). 
+Nesse caso, lembre-se de declarar a propriedade de altura no seletor do componente corpo, caso contrário as barras horizontais ficarão com uma dimensão diferente das verticais.
+
+Uma coisa que vai ocorrer ser a sua caixa tiver duas barras de rolagem (vertical e horizontal), 
+é o surgimento do elemento " corner " (CANTO). Segue uma descrição desse elemento e sua representação:
+
+::-webkit-scrollbar-corner - CANTO
+
+Esse é um elemento extra que representa o CANTO. Ele só fica visível quando temos ativado na nossa página uma 
+barra de rolagem vertical e horizontal ao mesmo tempo. Ele fica onde as duas barras de rolagem horizontal e 
+vertical se encontram. Geralmente, esse é o canto inferior direito da janela do navegador. 
+Pode ser necessário estilizar esse elemento em caixas do overflow por exemplo, onde às vezes temos duas barras de 
+rolagem que se encontram.
+
+Você pode personalizar o canto de várias maneiras: Mudar a cor de fundo, definir uma borda e por aí vai...
