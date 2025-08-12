@@ -13,3 +13,14 @@
 img {
     width: 100vw;
 }
+
+a {
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    display: block;
+    background-color: rgba(139, 0, 0, 0.603);
+    width: 100vw;
+    text-align: center;
+    padding: 15px;
+    color: white;
+}
