@@ -1,8 +1,9 @@
-@charset "UTF-8";
+
 
 * {
     margin: 0px;
     padding: 0px;
+    list-style-type: none;
 }
 
 body, html {
@@ -41,13 +42,13 @@ iframe.tela {
 }
 
 section.redes {
-    text-align: right;
+    padding: 20px;
 }
 
-.redes a img {
+.redes ul li a img {
     width: 50px;
     border-radius: 50px;
-    margin: 6px;
+    margin: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: all 0.5s ease;
 }
@@ -62,14 +63,14 @@ section.redes {
     section.redes {
         text-align: left;
         display: flex;
-        justify-content: flex-start;
-        padding: 30px 10px;
+        justify-content: flex-end;
+        padding: 10px 10px;
     }
 
     section.redes ul {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        gap: 5px;
+        gap: 0px;
     }
 }
