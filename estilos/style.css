@@ -39,6 +39,7 @@ iframe.tela {
     width: 269px;
     height: 474px;
     border: none;
+    border-radius: 5px;
 }
 
 section.redes {
@@ -49,22 +50,34 @@ section.redes {
     width: 50px;
     border-radius: 50px;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.5s ease;
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.205);
+    transition: transform .5s ease;
 }
 
 .redes a img:hover {
-    border: solid 1px rgba(255, 255, 255, 0.384);
     transform: scale(1.1);
-    transform: translateX(-2px);
+    transform: translateY(-3px);
 }
 
 @media screen and (max-width: 768px){
+    section.tell {
+        width: 300px;
+        height: 619px;
+    }
+
+    iframe.tela {
+        width: 266px;
+        height: 471px;
+        border-radius: 5px;
+    }
+
     section.redes {
         text-align: left;
         display: flex;
         justify-content: flex-end;
         padding: 10px 10px;
+        width: 95%;
+        height: 90%;
     }
 
     section.redes ul {

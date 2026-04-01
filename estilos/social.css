@@ -22,10 +22,11 @@ img {
 a {
     font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
-    display: block;
-    background-color: rgba(139, 0, 0, 0.603);
+    display: flex;
+    justify-content: center;
+    background-color: rgba(139, 0, 0, 0.411);
     width: 100vw;
     text-align: center;
-    padding: 15px;
+    padding: 5px;
     color: white;
 }
