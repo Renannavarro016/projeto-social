@@ -60,6 +60,10 @@ section.redes {
 }
 
 @media screen and (max-width: 768px){
+    main {
+        width: 420px;
+    }
+
     section.tell {
         width: 300px;
         height: 619px;
@@ -75,7 +79,7 @@ section.redes {
         text-align: left;
         display: flex;
         justify-content: flex-end;
-        padding: 10px 10px;
+        padding: 40px 50px;
         width: 95%;
         height: 90%;
     }
